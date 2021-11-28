@@ -1,4 +1,7 @@
 class VisitorsController < ApplicationController
+  def index
+    @visitors = Visitor.where("email = #{params[:email]}")
+  end
 
   def new
     @visitor = Visitor.new
